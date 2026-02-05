@@ -16,7 +16,7 @@ namespace StudentApi.Controllers
             if (StudentDataSimulation.StudentsList.Count == 0) return NotFound("No Students Found.");
             return Ok(StudentDataSimulation.StudentsList);
         }
-        
+
         [HttpGet("Passed", Name = "GetPassedStudents")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -46,6 +46,18 @@ namespace StudentApi.Controllers
             var student = StudentDataSimulation.StudentsList.Find(s => s.Id == Id);
             if (student == null) return NotFound($"Not Found: Student With Id [{Id}] Not Found.");
             return Ok(student);
+        }
+
+        [HttpPost(Name = "AddNewStudent")]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public ActionResult<Student> AddNewStudent(Student student)
+        {
+            if (student == null || string.IsNullOrEmpty(student.Name) || student.Age < 0 || student.Grade < 0)
+                return BadRequest("Invalid Student Info.");
+            student.Id = StudentDataSimulation.StudentsList.Count != 0 ? StudentDataSimulation.StudentsList.Max(s => s.Id) + 1 : student.Id = 0;
+            StudentDataSimulation.StudentsList.Add(student);
+            return CreatedAtRoute("GetStudentById", new { student.Id }, student);
         }
     }
 }
