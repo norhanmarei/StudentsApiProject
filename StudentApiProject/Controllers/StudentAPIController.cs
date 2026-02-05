@@ -59,5 +59,16 @@ namespace StudentApi.Controllers
             StudentDataSimulation.StudentsList.Add(student);
             return CreatedAtRoute("GetStudentById", new { student.Id }, student);
         }
+        [HttpDelete("{Id}", Name = "DeleteStudent")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public ActionResult DeleteStudent(int Id)
+        {
+            if (Id <= 0) return BadRequest($"Bad Request: Id [{Id}] Not Valid.");
+            int removedCount = StudentDataSimulation.StudentsList.RemoveAll(s => s.Id == Id);
+            if (removedCount == 0) return NotFound($"Student With [{Id}] Not Found.");
+            return Ok($"Student With Id [{Id}] Removed!");
+        }
     }
 }
