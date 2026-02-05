@@ -28,3 +28,4 @@
 /home/norhan/PersonalProjects/StudentApiProject/StudentApiProject/obj/Debug/net9.0/StudentApiProject.pdb
 /home/norhan/PersonalProjects/StudentApiProject/StudentApiProject/obj/Debug/net9.0/StudentApiProject.genruntimeconfig.cache
 /home/norhan/PersonalProjects/StudentApiProject/StudentApiProject/obj/Debug/net9.0/ref/StudentApiProject.dll
+/home/norhan/PersonalProjects/StudentApiProject/StudentApiProject/obj/Debug/net9.0/StudentApiProject.sourcelink.json
