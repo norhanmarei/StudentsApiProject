@@ -61,9 +61,9 @@ public class StudentData
     public static float GetAverageGrade()
     {
         float averageGrade = 0;
-        using(var conn = new NpgsqlConnection(_connectionString))
+        using (var conn = new NpgsqlConnection(_connectionString))
         {
-            using(var cmd = new NpgsqlCommand("SELECT GetAverageGrade();", conn))
+            using (var cmd = new NpgsqlCommand("SELECT GetAverageGrade();", conn))
             {
                 cmd.CommandType = CommandType.Text;
                 conn.Open();
@@ -74,6 +74,32 @@ public class StudentData
         }
         return averageGrade;
     }
+    public static StudentDTO? GetStudentById(int Id)
+    {
+        int ID = 0, Age = 0, Grade = 0;
+        string Name = "";
+        using (var conn = new NpgsqlConnection(_connectionString))
+        {
+            using (var cmd = new NpgsqlCommand($"SELECT * FROM GetStudentById({Id})", conn))
+            {
+                cmd.CommandType = CommandType.Text;
+                conn.Open();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        ID = reader.GetInt32(reader.GetOrdinal("Id"));
+                        Name = reader.GetString(reader.GetOrdinal("Name"));
+                        Age = reader.GetInt32(reader.GetOrdinal("Age"));
+                        Grade = reader.GetInt32(reader.GetOrdinal("Grade"));
+                        return new StudentDTO(ID, Name, Age, Grade);
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
 }
 public class StudentDTO
 {

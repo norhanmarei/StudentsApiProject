@@ -15,4 +15,9 @@ public class Student
     {
         return Student.GetAverageGrade();
     }
+    static public StudentDTO? GetStudentById(int Id)
+    {
+        return StudentData.GetStudentById(Id);
+    }
+
 }

@@ -30,7 +30,7 @@ namespace StudentApi.Controllers
             if (list.Count == 0) return NotFound("No Passed Students Found.");
             return Ok(list);
         }
-    
+
         [HttpGet("Average", Name = "GetAverageGrade")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -40,6 +40,18 @@ namespace StudentApi.Controllers
             var list = Student.GetAllStudents();
             if (list.Count == 0) return NotFound("No Students Found.");
             return Ok(avg);
+        }
+    
+        [HttpGet("{Id}", Name = "GetStudentById")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public ActionResult<StudentDTO> GetStudentById(int Id)
+        {
+            if (Id < 1) return BadRequest($"Bad Request: Id [{Id}] Is Invalid");
+            var student = Student.GetStudentById(Id);
+            if (student == null) return NotFound($"Student With Id [{Id}] Not Found.");
+            return Ok(student);
         }
     }
 }
