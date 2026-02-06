@@ -10,7 +10,7 @@ public class StudentData
         List<StudentDTO> StudentList = new List<StudentDTO>();
         using (var conn = new NpgsqlConnection(_connectionString))
         {
-            using(var cmd = new NpgsqlCommand("SELECT * FROM GetAllStudents()", conn))
+            using (var cmd = new NpgsqlCommand("SELECT * FROM GetAllStudents()", conn))
             {
                 cmd.CommandType = CommandType.Text;
                 conn.Open();
@@ -30,6 +30,33 @@ public class StudentData
             }
         }
         return StudentList;
+    }
+    public static List<StudentDTO> GetPassedStudents()
+    {
+        var list = new List<StudentDTO>();
+        using (var conn = new NpgsqlConnection(_connectionString))
+        {
+            using(var cmd = new NpgsqlCommand("SELECT * FROM GetPassedStudents()", conn))
+            {
+                cmd.CommandType = CommandType.Text;
+                conn.Open();
+                using(var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new StudentDTO
+                        (
+                            reader.GetInt32(reader.GetOrdinal("Id")),
+                            reader.GetString(reader.GetOrdinal("Name")),
+                            reader.GetInt32(reader.GetOrdinal("Age")),
+                            reader.GetInt32(reader.GetOrdinal("Grade"))
+
+                        ));
+                    }
+                }
+            }
+        }
+        return list;
     }
 }
 public class StudentDTO

@@ -7,4 +7,8 @@ public class Student
     {
         return StudentData.GetAllStudents();
     }
+    static public List<StudentDTO> GetPassedStudents()
+    {
+        return StudentData.GetPassedStudents();
+    }
 }
