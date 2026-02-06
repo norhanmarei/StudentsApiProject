@@ -1,0 +1,13 @@
+/home/norhan/PersonalProjects/StudentApiProject/StudentDataAccessLayer/bin/Debug/net9.0/StudentDataAccessLayer.deps.json
+/home/norhan/PersonalProjects/StudentApiProject/StudentDataAccessLayer/bin/Debug/net9.0/StudentDataAccessLayer.dll
+/home/norhan/PersonalProjects/StudentApiProject/StudentDataAccessLayer/bin/Debug/net9.0/StudentDataAccessLayer.pdb
+/home/norhan/PersonalProjects/StudentApiProject/StudentDataAccessLayer/obj/Debug/net9.0/StudentDataAccessLayer.csproj.AssemblyReference.cache
+/home/norhan/PersonalProjects/StudentApiProject/StudentDataAccessLayer/obj/Debug/net9.0/StudentDataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+/home/norhan/PersonalProjects/StudentApiProject/StudentDataAccessLayer/obj/Debug/net9.0/StudentDataAccessLayer.AssemblyInfoInputs.cache
+/home/norhan/PersonalProjects/StudentApiProject/StudentDataAccessLayer/obj/Debug/net9.0/StudentDataAccessLayer.AssemblyInfo.cs
+/home/norhan/PersonalProjects/StudentApiProject/StudentDataAccessLayer/obj/Debug/net9.0/StudentDataAccessLayer.csproj.CoreCompileInputs.cache
+/home/norhan/PersonalProjects/StudentApiProject/StudentDataAccessLayer/obj/Debug/net9.0/StudentDataAccessLayer.sourcelink.json
+/home/norhan/PersonalProjects/StudentApiProject/StudentDataAccessLayer/obj/Debug/net9.0/StudentDataAccessLayer.dll
+/home/norhan/PersonalProjects/StudentApiProject/StudentDataAccessLayer/obj/Debug/net9.0/refint/StudentDataAccessLayer.dll
+/home/norhan/PersonalProjects/StudentApiProject/StudentDataAccessLayer/obj/Debug/net9.0/StudentDataAccessLayer.pdb
+/home/norhan/PersonalProjects/StudentApiProject/StudentDataAccessLayer/obj/Debug/net9.0/ref/StudentDataAccessLayer.dll

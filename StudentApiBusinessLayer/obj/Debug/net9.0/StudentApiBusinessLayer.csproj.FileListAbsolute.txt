@@ -1,0 +1,16 @@
+/home/norhan/PersonalProjects/StudentApiProject/StudentApiBusinessLayer/bin/Debug/net9.0/StudentApiBusinessLayer.deps.json
+/home/norhan/PersonalProjects/StudentApiProject/StudentApiBusinessLayer/bin/Debug/net9.0/StudentApiBusinessLayer.dll
+/home/norhan/PersonalProjects/StudentApiProject/StudentApiBusinessLayer/bin/Debug/net9.0/StudentApiBusinessLayer.pdb
+/home/norhan/PersonalProjects/StudentApiProject/StudentApiBusinessLayer/bin/Debug/net9.0/StudentDataAccessLayer.dll
+/home/norhan/PersonalProjects/StudentApiProject/StudentApiBusinessLayer/bin/Debug/net9.0/StudentDataAccessLayer.pdb
+/home/norhan/PersonalProjects/StudentApiProject/StudentApiBusinessLayer/obj/Debug/net9.0/StudentApiBusinessLayer.csproj.AssemblyReference.cache
+/home/norhan/PersonalProjects/StudentApiProject/StudentApiBusinessLayer/obj/Debug/net9.0/StudentApiBusinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+/home/norhan/PersonalProjects/StudentApiProject/StudentApiBusinessLayer/obj/Debug/net9.0/StudentApiBusinessLayer.AssemblyInfoInputs.cache
+/home/norhan/PersonalProjects/StudentApiProject/StudentApiBusinessLayer/obj/Debug/net9.0/StudentApiBusinessLayer.AssemblyInfo.cs
+/home/norhan/PersonalProjects/StudentApiProject/StudentApiBusinessLayer/obj/Debug/net9.0/StudentApiBusinessLayer.csproj.CoreCompileInputs.cache
+/home/norhan/PersonalProjects/StudentApiProject/StudentApiBusinessLayer/obj/Debug/net9.0/StudentApiBusinessLayer.sourcelink.json
+/home/norhan/PersonalProjects/StudentApiProject/StudentApiBusinessLayer/obj/Debug/net9.0/StudentA.7A521644.Up2Date
+/home/norhan/PersonalProjects/StudentApiProject/StudentApiBusinessLayer/obj/Debug/net9.0/StudentApiBusinessLayer.dll
+/home/norhan/PersonalProjects/StudentApiProject/StudentApiBusinessLayer/obj/Debug/net9.0/refint/StudentApiBusinessLayer.dll
+/home/norhan/PersonalProjects/StudentApiProject/StudentApiBusinessLayer/obj/Debug/net9.0/StudentApiBusinessLayer.pdb
+/home/norhan/PersonalProjects/StudentApiProject/StudentApiBusinessLayer/obj/Debug/net9.0/ref/StudentApiBusinessLayer.dll

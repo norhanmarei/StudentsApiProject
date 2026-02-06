@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StudentDataAccessLayer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7dd623811799eaf6fa913772330853fc59604ea1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1bb9ea5e2e5441352a1ec8f93d0da6710a6012e9")]
 [assembly: System.Reflection.AssemblyProductAttribute("StudentDataAccessLayer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StudentDataAccessLayer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

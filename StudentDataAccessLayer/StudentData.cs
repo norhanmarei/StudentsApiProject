@@ -1,0 +1,48 @@
+﻿using System.Data;
+using Npgsql;
+namespace StudentDataAccessLayer;
+
+public class StudentData
+{
+    static string _connectionString = "Server=localhost; Database=studentdb; User Id=postgres; Password=Hi!bluhDuh99";
+    public static List<StudentDTO> GetAllStudents()
+    {
+        List<StudentDTO> StudentList = new List<StudentDTO>();
+        using (var conn = new NpgsqlConnection(_connectionString))
+        {
+            using(var cmd = new NpgsqlCommand("SELECT * FROM GetAllStudents()", conn))
+            {
+                cmd.CommandType = CommandType.Text;
+                conn.Open();
+                using (NpgsqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        StudentList.Add(new StudentDTO
+                        (
+                            reader.GetInt32(reader.GetOrdinal("Id")),
+                            reader.GetString(reader.GetOrdinal("Name")),
+                            reader.GetInt32(reader.GetOrdinal("Age")),
+                            reader.GetInt32(reader.GetOrdinal("Grade"))
+                        ));
+                    }
+                }
+            }
+        }
+        return StudentList;
+    }
+}
+public class StudentDTO
+{
+    public StudentDTO(int Id, string Name, int Age, int Grade)
+    {
+        this.Id = Id;
+        this.Name = Name;
+        this.Age = Age;
+        this.Grade = Grade;
+    }
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public int Age { get; set; }
+    public int Grade{ get; set; }
+}
