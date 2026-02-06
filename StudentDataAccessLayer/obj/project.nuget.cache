@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "iZi2IlwXrcI=",
+  "success": true,
+  "projectFilePath": "/home/norhan/PersonalProjects/StudentApiProject/StudentDataAccessLayer/StudentDataAccessLayer.csproj",
+  "expectedPackageFiles": [
+    "/home/norhan/.nuget/packages/microsoft.netcore.app.ref/9.0.7/microsoft.netcore.app.ref.9.0.7.nupkg.sha512",
+    "/home/norhan/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.7/microsoft.aspnetcore.app.ref.9.0.7.nupkg.sha512"
+  ],
+  "logs": []
+}

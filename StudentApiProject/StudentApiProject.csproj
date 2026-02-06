@@ -10,4 +10,8 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\StudentApiBusinessLayer\StudentApiBusinessLayer.csproj" />
+  </ItemGroup>
+
 </Project>
