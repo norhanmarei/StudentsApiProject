@@ -51,7 +51,8 @@ namespace StudentApi.Controllers
             if (Id < 1) return BadRequest($"Bad Request: Id [{Id}] Is Invalid");
             var student = Student.GetStudentById(Id);
             if (student == null) return NotFound($"Student With Id [{Id}] Not Found.");
-            return Ok(student);
+            var sDTO = student.studentDto;
+            return Ok(sDTO);
         }
     }
 }
