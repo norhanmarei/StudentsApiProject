@@ -36,11 +36,11 @@ public class StudentData
         var list = new List<StudentDTO>();
         using (var conn = new NpgsqlConnection(_connectionString))
         {
-            using(var cmd = new NpgsqlCommand("SELECT * FROM GetPassedStudents()", conn))
+            using (var cmd = new NpgsqlCommand("SELECT * FROM GetPassedStudents()", conn))
             {
                 cmd.CommandType = CommandType.Text;
                 conn.Open();
-                using(var reader = cmd.ExecuteReader())
+                using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
                     {
@@ -57,6 +57,22 @@ public class StudentData
             }
         }
         return list;
+    }
+    public static float GetAverageGrade()
+    {
+        float averageGrade = 0;
+        using(var conn = new NpgsqlConnection(_connectionString))
+        {
+            using(var cmd = new NpgsqlCommand("SELECT GetAverageGrade();", conn))
+            {
+                cmd.CommandType = CommandType.Text;
+                conn.Open();
+                var result = cmd.ExecuteScalar();
+                if (result != null && result != DBNull.Value) averageGrade = Convert.ToSingle(result);
+
+            }
+        }
+        return averageGrade;
     }
 }
 public class StudentDTO

@@ -11,4 +11,8 @@ public class Student
     {
         return StudentData.GetPassedStudents();
     }
+    static public float GetAverageGrade()
+    {
+        return Student.GetAverageGrade();
+    }
 }

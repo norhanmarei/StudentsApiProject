@@ -30,5 +30,16 @@ namespace StudentApi.Controllers
             if (list.Count == 0) return NotFound("No Passed Students Found.");
             return Ok(list);
         }
+    
+        [HttpGet("Average", Name = "GetAverageGrade")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public ActionResult<float> GetAverageGrade()
+        {
+            float avg = Student.GetAverageGrade();
+            var list = Student.GetAllStudents();
+            if (list.Count == 0) return NotFound("No Students Found.");
+            return Ok(avg);
+        }
     }
 }
