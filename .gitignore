@@ -1,0 +1,21 @@
+# Build directories
+bin/
+obj/
+
+# Visual Studio / Rider / IDE stuff
+.vs/
+*.user
+*.suo
+*.ncrunch*
+*.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# NuGet packages
+*.nupkg
+packages/
