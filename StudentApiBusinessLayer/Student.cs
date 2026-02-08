@@ -1,4 +1,6 @@
-﻿using StudentDataAccessLayer;
+﻿using System.Data.Common;
+using Npgsql.Replication;
+using StudentDataAccessLayer;
 namespace StudentApiBusinessLayer;
 
 public class Student
@@ -20,6 +22,16 @@ public class Student
     }
 
 
+    private bool _addNewStudent()
+    {
+        this.Id = StudentData.AddNewStudent(studentDto);
+        return (this.Id != -1);
+    }
+    private bool _updateStudent()
+    {
+        return StudentData.UpdateStudent(studentDto) > 0;
+    }
+
 
     static public List<StudentDTO> GetAllStudents()
     {
@@ -39,5 +51,24 @@ public class Student
         if (studentDTO == null) return null;
         return new Student(studentDTO, enMode.Update);
     }
-
+    public bool Save()
+    {
+        switch (Mode)
+        {
+            case enMode.AddNew:
+                {
+                    if (_addNewStudent())
+                    {
+                        Mode = enMode.Update;
+                        return true;
+                    }
+                    return false;
+                }
+            case enMode.Update:
+                {
+                    return _updateStudent();
+                }
+        }
+        return false;
+    }  
 }

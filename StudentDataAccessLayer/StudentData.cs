@@ -99,7 +99,41 @@ public class StudentData
         }
         return null;
     }
-
+    public static int AddNewStudent(StudentDTO sDTO)
+    {
+        int Id = -1;
+        using (var conn = new NpgsqlConnection(_connectionString))
+        {
+            using (var cmd = new NpgsqlCommand("SELECT AddStudent(@Name, @Age, @Grade)", conn))
+            {
+                conn.Open();
+                cmd.Parameters.AddWithValue("@Name", sDTO.Name);
+                cmd.Parameters.AddWithValue("@Age", sDTO.Age);
+                cmd.Parameters.AddWithValue("@Grade", sDTO.Grade);
+                var result = cmd.ExecuteScalar();
+                if (result != null && result != DBNull.Value) Id = Convert.ToInt32(result);
+            }
+        }
+        return Id;
+    }
+    public static int UpdateStudent(StudentDTO sDTO)
+    {
+        int affectedRows = 0;
+        using (var conn = new NpgsqlConnection(_connectionString))
+        {
+            using (var cmd = new NpgsqlCommand("SELECT UpdateStudent(@Id, @Name, @Age, @Grade)", conn))
+            {
+                cmd.Parameters.AddWithValue("@Id", sDTO.Id);
+                cmd.Parameters.AddWithValue("@Name", sDTO.Name);
+                cmd.Parameters.AddWithValue("@Age", sDTO.Age);
+                cmd.Parameters.AddWithValue("@Grade", sDTO.Grade);
+                conn.Open();
+                var result = cmd.ExecuteScalar();
+                if (result != null && result != DBNull.Value) affectedRows = Convert.ToInt32(result);
+            }
+        }
+        return affectedRows;
+    }
 }
 public class StudentDTO
 {
