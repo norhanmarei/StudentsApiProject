@@ -5,7 +5,7 @@ namespace StudentApiBusinessLayer;
 
 public class Student
 {
-    public enum enMode {AddNew=0, Update=1};
+    public enum enMode { AddNew = 0, Update = 1 };
     public enMode Mode = enMode.AddNew;
     public int Id { get; set; }
     public string Name { get; set; } = string.Empty;
@@ -70,5 +70,9 @@ public class Student
                 }
         }
         return false;
-    }  
+    }
+    public bool Delete(int Id)
+    {
+        return StudentData.Delete(Id) > 0;
+    }
 }

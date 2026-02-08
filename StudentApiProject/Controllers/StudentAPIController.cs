@@ -80,7 +80,7 @@ namespace StudentApi.Controllers
         }
 
 
-        [HttpPut("{Id}" ,Name = "UpdateStudent")]
+        [HttpPut("{Id}", Name = "UpdateStudent")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -98,6 +98,21 @@ namespace StudentApi.Controllers
                 return Ok(student.studentDto);
             else
                 return StatusCode(500, new { message = "Internal Server Error: Error Occurred While Updating, Student Not Updated" });
+        }
+    
+    
+        [HttpDelete("{Id}" ,Name = "DeleteStudent")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public ActionResult DeleteStudent(int Id)
+        {
+            if (Id < 1) return BadRequest($"Bad Request: Invalid Stuent ID [{Id}]");
+            var student = Student.GetStudentById(Id);
+            if (student == null) return NotFound($"Not Found: Student With Id [{Id}] Is Not Found.");
+            if (student.Delete(Id)) return Ok($"Student With Id [{Id}] Was Deleted.");
+            else return StatusCode(500, new { message = "Internal Server Error: Error Occurred While Deleting." });
         }
     }
 }

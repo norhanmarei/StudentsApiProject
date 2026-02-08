@@ -134,6 +134,21 @@ public class StudentData
         }
         return affectedRows;
     }
+    public static int Delete(int Id)
+    {
+        int affectedRows = 0;
+        using(var conn = new NpgsqlConnection(_connectionString))
+        {
+            using(var cmd = new NpgsqlCommand("SELECT DeleteStudent(@StudentID)", conn))
+            {
+                cmd.Parameters.AddWithValue("@StudentID", Id);
+                conn.Open();
+                var res = cmd.ExecuteScalar();
+                if (res != null && res != DBNull.Value) affectedRows = Convert.ToInt32(res);
+            }
+        }
+        return affectedRows;
+    }
 }
 public class StudentDTO
 {
